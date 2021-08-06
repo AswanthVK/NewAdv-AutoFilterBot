@@ -21,6 +21,8 @@ DB_URI = os.environ.get("DB_URI")
 
 USER_SESSION = os.environ.get("USER_SESSION")
 
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
+
 CHAT_DETAILS = {}
 
 logging.basicConfig(
