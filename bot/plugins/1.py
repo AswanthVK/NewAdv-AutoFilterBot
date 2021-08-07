@@ -25,9 +25,4 @@ async def force_sub(c, m):
             markup = InlineKeyboardMarkup(button)
             return await m.reply_text(text="Hey join in my updates channel to use me.", parse_mode='markdown', reply_markup=markup, quote=True)
 
-        except ChatAdminRequired:
-            logger.warning(f"Make me admin in @{UPDATE_CHANNEL}")
-            if m.from_user.id in Config.AUTH_USERS:
-                return await m.reply_text(f"Make me admin in @{UPDATE_CHANNEL}")
-
     await m.continue_propagation()
