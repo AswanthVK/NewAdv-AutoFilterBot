@@ -30,6 +30,21 @@
         "USER_SESSION": {
             "description": "A Pyrogram User Session String. Generated From @PyrogramStringBot",
             "value": ""
+        },
+        "UPDATE_CHANNEL": {
+            "description": "For Force Subscribe. Paste your Update channel USERNAME (without @)..",
+            "value": "",
+            "required": false
+        },
+        "LOG_CHANNEL": {
+            "description": "Your Group ID, To know who started the Bot (start with -100).",
+            "value": "",
+            "required": false
+        },
+        "BOT_USERNAME": {
+            "description": "After Forcing users join given channel, To restart Bot (without @).",
+            "value": "",
+            "required": false
         }
     },
     "buildpacks": [
