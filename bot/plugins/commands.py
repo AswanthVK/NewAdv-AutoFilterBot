@@ -56,7 +56,7 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    await bot.send_message(chat_id=LOG_CHANNEL, text=f"**New User Joined:** \n\nUser [{update.from_user.first_name}](tg://user?id={update.from_user.id}) started Bot!!")
+    await bot.send_message(chat_id=LOG_CHANNEL, text=f"#NEW_USER: \n\nUser <a href='tg://user?id={update.from_user.id}'>[{update.from_user.first_name}] </a>started Bot!!")
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
