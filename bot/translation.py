@@ -48,9 +48,13 @@ For More Details Click <i>Help</i> Button Below..
     
 <b>➥ Creator</b> : <b><i><a href="https://t.me/AswanthVK">AswanthVK</a></i></b>
 
+<b>➥ Credits</b> : <code>Everyone in this journey</code>
+
 <b>➥ Language</b> : <code>Python3</code>
 
 <b>➥ Library</b> : <i><a href="https://docs.pyrogram.org">Pyrogram Asyncio 1.13.0 </a></i>
 
 <b>➥ Source Code</b> : <i><a href="https://github.com/AswanthVK/NewAdv-AutoFilterBot">Click Me</a></i>
+
+<b>➥ Build Status</b> : <code>V2.0 [BETA]</code>
 """
