@@ -74,7 +74,7 @@ async def start(bot, update):
             )
             return
         else:
-            await bot.send_message(LOG_CHANNEL, text=Translation.NEW_USER_TEXT.format(update.from_user.first_name))
+            await bot.send_message(int(LOG_CHANNEL), text=Translation.NEW_USER_TEXT.format(update.from_user.first_name))
             await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
