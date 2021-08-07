@@ -60,3 +60,8 @@ For More Details Click <u>Help</u> Button Below..
 
 <b>Quate:</b> Don't kill me, everyone will get.
 """
+
+    NEW_USER_TEXT = """#NEW_USER:
+
+User {} started Bot!!
+"""
