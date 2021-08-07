@@ -4,7 +4,8 @@
 
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
-from bot import LOG_CHANNEL
+from pyrogram.errors import UserNotParticipant, FloodWait
+from bot import LOG_CHANNEL, UPDATE_CHANNEL, BOT_USERNAME, BOT_OWNER
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 
@@ -56,8 +57,25 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
-    #await bot.send_message(chat_id=LOG_CHANNEL, text=f"#NEW_USER: \n\nUser {update.from_user.first_name} started Bot!!")
-    await bot.send_message(
+    if UPDATE_CHANNEL:
+        try:
+            user = await bot.get_chat_member(UPDATE_CHANNEL, update.chat.id)
+            if user.status == "kicked":
+               await update.reply_text(" Sorry, You are **BANNED**")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{UPDATE_CHANNEL} To Use Me")
+            await update.reply_text(
+                text="**Please Join My Update Channel Before Using Me..**",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{UPDATE_CHANNEL}")],
+                    [ InlineKeyboardButton(text="Refresh", url=f"https://t.me/{BOT_USERNAME}?start")]
+              ])
+            )
+            return
+        else:
+            #await bot.send_message(chat_id=LOG_CHANNEL, text=f"#NEW_USER: \n\nUser {update.from_user.first_name} started Bot!!")
+            await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
                 update.from_user.first_name),
