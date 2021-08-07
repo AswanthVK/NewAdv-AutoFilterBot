@@ -4,6 +4,7 @@
 
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from bot import LOG_CHANNEL
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 
@@ -55,6 +56,10 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
+    await bot.send_message(
+            LOG_CHANNEL,
+            f"**New User Joined:** \n\nUser [{m.from_user.first_name}](tg://user?id={m.from_user.id}) started Bot!!"
+        )
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
