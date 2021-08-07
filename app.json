@@ -37,12 +37,12 @@
             "required": false
         },
         "LOG_CHANNEL": {
-            "description": "Your Group ID, To know who started the Bot (start with -100).",
+            "description": "Your Channel/Group ID, To know who started the Bot (starts with -100).",
             "value": "",
             "required": false
         },
         "BOT_USERNAME": {
-            "description": "After Forcing users join given channel, To restart Bot (without @).",
+            "description": "After Forcing users to join given channel, it helps to restart Bot (without @).",
             "value": "",
             "required": false
         }
