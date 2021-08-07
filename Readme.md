@@ -12,7 +12,7 @@
   </a>  
 </p>
 
-__This Is Just An Simple Advance Auto Filter Bot Complete Rewritten Version Of [Adv-Filter-Bot](https://github.com/CrazyBotsz/Adv-Filter-Bot-V2)..__
+__This Is Just An Simple Advance Auto Filter Bot Complete Rewritten Version Of [Adv-Filter-Bot](https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot-V2)..__
 
 __Just Sent Any Text As Query It Will Search For All Connected Chat's Files In Its MongoDB And Reply You With The Message Link As A Button__
 
@@ -107,5 +107,5 @@ Selling The Codes To Other People For Money Is *Strictly Prohibited*.
 
  - Thanks To Dan For His Awsome [Libary](https://github.com/pyrogram/pyrogram)
  - Thanks To SpEcHiDe For His Awesome [DeleteMessagesRoBot](https://github.com/SpEcHiDe/DeleteMessagesRoBot)
- - Thanks To AlbertEinsteinTG For His [Adv-Auto-Filter-Bot-V2](https://github.com/CrazyBotsz/Adv-Filter-Bot-V2)
+ - Thanks To AlbertEinsteinTG For His [Adv-Auto-Filter-Bot-V2](https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot-V2)
  - [Thanks To Me 👀](https://github.com/AswanthVK)
