@@ -56,7 +56,7 @@ async def start(bot, update):
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
-    
+
     if UPDATE_CHANNEL:
         try:
             user = await bot.get_chat_member(UPDATE_CHANNEL, update.chat.id)
@@ -74,6 +74,7 @@ async def start(bot, update):
             )
             return
         else:
+            await bot.send_message(LOG_CHANNEL, text=Translation.NEW_USER_TEXT.format(update.from_user.first_name))
             await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
@@ -82,8 +83,7 @@ async def start(bot, update):
         parse_mode="html",
         reply_to_message_id=update.message_id
     )
-    await bot.send_message(chat_id=LOG_CHANNEL, text=Translation.NEW_USER_TEXT.format(update.from_user.first_name)
-
+    
 
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
 async def help(bot, update):
