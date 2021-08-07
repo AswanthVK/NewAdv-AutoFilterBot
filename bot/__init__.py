@@ -25,6 +25,8 @@ LOG_CHANNEL = os.environ.get("LOG_CHANNEL")
 
 UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL")
 
+BOT_USERNAME = os.environ.get("BOT_USERNAME")
+
 CHAT_DETAILS = {}
 
 logging.basicConfig(
