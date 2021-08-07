@@ -9,7 +9,7 @@ class Translation(object):
 
 Just Add Me To Your Group And Channel And Connect Them And See My Pevers 🔥🔥😝
 
-For More Details Click <i>Help</i> Button Below..
+For More Details Click <u>Help</u> Button Below..
 </i>"""    
     
     HELP_TEXT = """
