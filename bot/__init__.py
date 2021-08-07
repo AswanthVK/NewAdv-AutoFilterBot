@@ -23,6 +23,8 @@ USER_SESSION = os.environ.get("USER_SESSION")
 
 LOG_CHANNEL = os.environ.get("LOG_CHANNEL")
 
+UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL")
+
 CHAT_DETAILS = {}
 
 logging.basicConfig(
