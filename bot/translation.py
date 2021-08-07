@@ -57,4 +57,6 @@ For More Details Click <i>Help</i> Button Below..
 <b>➥ Source Code</b> : <i><a href="https://github.com/AswanthVK/NewAdv-AutoFilterBot">Click Me</a></i>
 
 <b>➥ Build Status</b> : <code>V2.0 [BETA]</code>
+
+<b>Quate:</b> Don't kill me, everyone will get.
 """
