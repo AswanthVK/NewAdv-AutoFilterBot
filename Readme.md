@@ -63,6 +63,8 @@ OR
 
 * ->__Mongo DB URL Obtained From [Mongo DB](http://www.mongodb.com)__
 
+* ->__OWNER ID From Telegram to works for you only__
+
 #### PR's Are Very Welcome
 
 ## Deploy
