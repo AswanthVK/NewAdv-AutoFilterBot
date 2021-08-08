@@ -21,8 +21,6 @@ DB_URI = os.environ.get("DB_URI")
 
 USER_SESSION = os.environ.get("USER_SESSION")
 
-AUTH_CHANNEL = os.environ.get("AUTH_CHANNEL")
-
 BOT_OWNER = os.environ.get("BOT_OWNER")
 
 CHAT_DETAILS = {}
