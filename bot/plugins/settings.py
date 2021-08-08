@@ -6,7 +6,7 @@ import re
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from bot import CHAT_DETAILS
+from bot import CHAT_DETAILS, BOT_OWNER
 from bot.plugins.utils import admin_list
 
 
