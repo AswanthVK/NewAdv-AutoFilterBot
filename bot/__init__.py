@@ -21,11 +21,7 @@ DB_URI = os.environ.get("DB_URI")
 
 USER_SESSION = os.environ.get("USER_SESSION")
 
-LOG_CHANNEL = os.environ.get("LOG_CHANNEL")
-
-UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL")
-
-BOT_USERNAME = os.environ.get("BOT_USERNAME")
+AUTH_CHANNEL = os.environ.get("AUTH_CHANNEL")
 
 BOT_OWNER = os.environ.get("BOT_OWNER")
 
