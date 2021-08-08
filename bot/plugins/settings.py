@@ -14,6 +14,13 @@ from bot.plugins.utils import admin_list
 @Client.on_message(filters.command(["settings"]) & filters.group, group=1)
 async def settings(bot, update):
     
+    if str(update.from_user.id) not in BOT_OWNER:
+        await bot.delete_messages(
+            chat_id=update.chat.id,
+            message_ids=update.message_id,
+            revoke=True
+        )
+        return
     chat_id = update.chat.id
     user_id = update.from_user.id if update.from_user else None
     global CHAT_DETAILS
