@@ -19,7 +19,7 @@ async def connect(bot: Bot, update: Message):
     """
     A Funtion To Handle Incoming /add Command TO COnnect A Chat With Group
     """
-    if update.chat.id not in AUTH_CHANNEL:
+    if str(update.chat.id) not in AUTH_CHANNEL:
         await bot.delete_messages(
             chat_id=update.chat.id,
             text=f"Your Channel is not authorised.",
