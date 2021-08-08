@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import UserAlreadyParticipant, FloodWait
 
-from bot import CHAT_DETAILS
+from bot import CHAT_DETAILS, AUTH_CHANNELS
 from bot.bot import Bot 
 from bot.database import Database 
 from bot.plugins.auto_filter import recacher
@@ -19,6 +19,14 @@ async def connect(bot: Bot, update: Message):
     """
     A Funtion To Handle Incoming /add Command TO COnnect A Chat With Group
     """
+    if update.chat.id not in AUTH_CHANNELS:
+        await bot.delete_messages(
+            chat_id=m.chat.id,
+            text=f"Your Channel is not authorised.",
+            message_ids=update.message_id,
+            revoke=True
+        )
+        return
     chat_id = update.chat.id
     user_id = update.from_user.id if update.from_user else None
     target_chat = update.text.split(None, 1)
