@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import UserAlreadyParticipant, FloodWait
 
-from bot import CHAT_DETAILS, AUTH_CHANNEL
+from bot import CHAT_DETAILS, AUTH_CHANNEL, BOT_OWNER
 from bot.bot import Bot 
 from bot.database import Database 
 from bot.plugins.auto_filter import recacher
@@ -19,7 +19,7 @@ async def connect(bot: Bot, update: Message):
     """
     A Funtion To Handle Incoming /add Command TO COnnect A Chat With Group
     """
-    if str(update.chat.id) not in AUTH_CHANNEL:
+    if str(update.from_user.id) not in BOT_OWNER:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
