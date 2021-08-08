@@ -5,7 +5,7 @@
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import UserNotParticipant, FloodWait
-from bot import LOG_CHANNEL, UPDATE_CHANNEL, BOT_USERNAME, BOT_OWNER
+from bot import AUTH_CHANNEL, BOT_OWNER
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 
@@ -57,25 +57,15 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
 
-    if UPDATE_CHANNEL:
-        try:
-            user = await bot.get_chat_member(UPDATE_CHANNEL, update.chat.id)
-            if user.status == "kicked":
-               await update.reply_text(" Sorry, You are **BANNED**")
-               return
-        except UserNotParticipant:
-            #await update.reply_text(f"Join @{UPDATE_CHANNEL} To Use Me")
-            await update.reply_text(
-                text="Please Join My Update Channel Before Using Me..",
-                reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text="Join Updates Channel", url=f"https://t.me/{UPDATE_CHANNEL}")],
-                    [ InlineKeyboardButton(text="🔄 Refresh🔄 ", url=f"https://t.me/{BOT_USERNAME}?start")]
-              ])
-            )
-            return
-        else:
-            await bot.send_message(int(LOG_CHANNEL), text=Translation.NEW_USER_TEXT.format(update.from_user.first_name))
-            await bot.send_message(
+    if update.from_user.id not in BOT_OWNER:
+        await bot.delete_messages(
+            chat_id=update.chat.id,
+            text=f"You are not authorised to use me.",
+            message_ids=update.message_id,
+            revoke=True
+        )
+        return
+    await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
                 update.from_user.first_name),
@@ -96,6 +86,14 @@ async def help(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
+    if update.from_user.id not in BOT_OWNER:
+        await bot.delete_messages(
+            chat_id=update.chat.id,
+            text=f"You are not authorised to use me.",
+            message_ids=update.message_id,
+            revoke=True
+        )
+        return
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_TEXT,
@@ -114,6 +112,14 @@ async def about(bot, update):
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     
+    if update.from_user.id not in BOT_OWNER:
+        await bot.delete_messages(
+            chat_id=update.chat.id,
+            text=f"You are not authorised to use me.",
+            message_ids=update.message_id,
+            revoke=True
+        )
+        return
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.ABOUT_TEXT,
