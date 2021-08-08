@@ -5,7 +5,7 @@
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import UserNotParticipant, FloodWait
-from bot import AUTH_CHANNEL, BOT_OWNER
+from bot import BOT_OWNER
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 
