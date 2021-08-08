@@ -11,7 +11,7 @@ from bot.database import Database # pylint: disable=import-error
 
 db = Database()
 
-@Client.on_message(filters.command(["start"]) & filters.private & filters.user(BOT_OWNER), group=1)
+@Client.on_message(filters.command(["start"]) & filters.private, group=1)
 async def start(bot, update):
     
     try:
@@ -57,14 +57,14 @@ async def start(bot, update):
     
     reply_markup = InlineKeyboardMarkup(buttons)
 
-    #if update.from_user.id not in BOT_OWNER:
-        #await bot.delete_messages(
-            #chat_id=update.chat.id,
-            #text=f"You are not authorised to use me.",
-            #message_ids=update.message_id,
-            #revoke=True
-        # )
-        #return
+    if str(update.from_user.id) not in BOT_OWNER:
+        await bot.delete_messages(
+            chat_id=update.chat.id,
+            text=f"You are not authorised to use me.",
+            message_ids=update.message_id,
+            revoke=True
+        )
+        return
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT.format(
@@ -75,7 +75,7 @@ async def start(bot, update):
     )
     
 
-@Client.on_message(filters.command(["help"]) & filters.private & filters.user(BOT_OWNER), group=1)
+@Client.on_message(filters.command(["help"]) & filters.private, group=1)
 async def help(bot, update):
     buttons = [[
         InlineKeyboardButton('Home ⚡', callback_data='start'),
@@ -103,7 +103,7 @@ async def help(bot, update):
     )
 
 
-@Client.on_message(filters.command(["about"]) & filters.private & filters.user(BOT_OWNER), group=1)
+@Client.on_message(filters.command(["about"]) & filters.private, group=1)
 async def about(bot, update):
     
     buttons = [[
