@@ -31,20 +31,9 @@
             "description": "A Pyrogram User Session String. Generated From @PyrogramStringBot",
             "value": ""
         },
-        "UPDATE_CHANNEL": {
-            "description": "For Force Subscribe. Paste your Update channel USERNAME (without @)..",
-            "value": "",
-            "required": false
-        },
-        "LOG_CHANNEL": {
-            "description": "Your Channel/Group ID, To know who started the Bot (starts with -100).",
-            "value": "",
-            "required": false
-        },
-        "BOT_USERNAME": {
-            "description": "After Forcing users to join given channel, it helps to restart Bot (without @).",
-            "value": "",
-            "required": false
+        "BOT_OWNER": {
+            "description": "Allow only owner to use this Bot, Give ur user ID",
+            "value": ""
         }
     },
     "buildpacks": [
