@@ -60,7 +60,7 @@ async def start(bot, update):
     if str(update.from_user.id) not in BOT_OWNER:
         await bot.delete_messages(
             chat_id=update.chat.id,
-            text=f"You are not authorised to use me.",
+            f"You are not authorised to use me.",
             message_ids=update.message_id,
             revoke=True
         )
