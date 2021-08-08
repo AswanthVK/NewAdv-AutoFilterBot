@@ -21,7 +21,7 @@ async def connect(bot: Bot, update: Message):
     """
     if update.chat.id not in AUTH_CHANNEL:
         await bot.delete_messages(
-            chat_id=m.chat.id,
+            chat_id=update.chat.id,
             text=f"Your Channel is not authorised.",
             message_ids=update.message_id,
             revoke=True
