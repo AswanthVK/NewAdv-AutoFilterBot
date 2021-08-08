@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import UserAlreadyParticipant, FloodWait
 
-from bot import CHAT_DETAILS, AUTH_CHANNEL, BOT_OWNER
+from bot import CHAT_DETAILS, BOT_OWNER
 from bot.bot import Bot 
 from bot.database import Database 
 from bot.plugins.auto_filter import recacher
