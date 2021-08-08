@@ -63,7 +63,7 @@ OR
 
 * ->__Mongo DB URL Obtained From [Mongo DB](http://www.mongodb.com)__
 
-* ->__OWNER ID From Telegram to works for you only__
+* ->__OWNER ID From Telegram to works for you only, use @MissRose_bot__
 
 #### PR's Are Very Welcome
 
